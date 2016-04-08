@@ -50,6 +50,9 @@ An optional `layer` property can be added in the options for each basemap, and t
 Each basemap is represented using a tile from the underlying tile service.  Choose the tile x, y, z that provides the
 best looking representative basemap image for your application.
 
+Note: this automatically adds the first basemap in your list to the map during initialization, so you don't need to add that
+TileLayer to your map.
+
 
 Example usage:
 

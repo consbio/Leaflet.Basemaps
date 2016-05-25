@@ -7,7 +7,7 @@ underlying tile service.
 
 See the [example](http://consbio.github.io/Leaflet.Basemaps).
 
-*Tested with Leaflet 1.0b2*
+*Tested with Leaflet 1.0.0-rc1*
 
 
 ## Install

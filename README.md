@@ -5,7 +5,7 @@ A tile driven basemaps control for Leaflet.
 It allows you to create a user interface control for choosing the basemap used on the map, based on a tile from a the
 underlying tile service.
 
-See the [example](//consbio.github.io/Leaflet.Basemaps).
+See the [example](http://consbio.github.io/Leaflet.Basemaps).
 
 *Tested with Leaflet 1.0b2*
 

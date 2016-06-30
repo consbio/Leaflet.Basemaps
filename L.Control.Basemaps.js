@@ -51,6 +51,7 @@ L.Control.Basemaps = L.Control.extend({
                 if (d != this.basemap) {
                     map.removeLayer(this.basemap);
                     map.addLayer(d);
+                    d.bringToBack();
                     map.fire('baselayerchange', this.basemap);
                     this.basemap = d;
 

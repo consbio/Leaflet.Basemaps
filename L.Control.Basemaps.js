@@ -52,7 +52,7 @@ L.Control.Basemaps = L.Control.extend({
                     map.removeLayer(this.basemap);
                     map.addLayer(d);
                     d.bringToBack();
-                    map.fire('baselayerchange', this.basemap);
+                    map.fire('baselayerchange', d);
                     this.basemap = d;
 
                     L.DomUtil.removeClass(document.getElementsByClassName('basemap active')[0], 'active');

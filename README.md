@@ -92,3 +92,8 @@ map.addControl(L.control.basemaps({
 
 ## Credits:
 Developed with support from the [Peninsular Florida Landscape Conservation Cooperative](http://peninsularfloridalcc.org)
+
+
+## Contributors:
+* [Brendan Ward](https://github.com/brendan-ward)
+* [Nik Molnar](https://github.com/nikmolnar)

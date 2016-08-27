@@ -7,7 +7,7 @@ underlying tile service.
 
 See the [example](http://consbio.github.io/Leaflet.Basemaps).
 
-*Tested with Leaflet 1.0.0-rc1*
+*Tested with Leaflet 1.0.0-rc3*
 
 
 ## Install
@@ -91,7 +91,7 @@ map.addControl(L.control.basemaps({
 
 
 ## Credits:
-Developed with support from the [Peninsular Florida Landscape Conservation Cooperative](http://peninsularfloridalcc.org)
+Developed and maintained with support from the [Peninsular Florida Landscape Conservation Cooperative](http://peninsularfloridalcc.org) and additional support from the [U.S. Forest Service Northwest Regional Climate Hub](http://www.fs.fed.us/climatechange/nrch/).
 
 
 ## Contributors:

@@ -58,7 +58,7 @@ L.Control.Basemaps = L.Control.extend({
                     L.DomUtil.removeClass(document.getElementsByClassName('basemap active')[0], 'active');
                     L.DomUtil.addClass(basemapNode, 'active');
 
-                    var altIdx = (i === 0)? 1: 0;
+                    var altIdx = (i+1) % this.options.basemaps.length;
                     L.DomUtil.removeClass(document.getElementsByClassName('basemap alt')[0], 'alt');
                     L.DomUtil.addClass(document.getElementsByClassName('basemap')[altIdx], 'alt');
                 }

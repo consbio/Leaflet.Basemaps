@@ -35,6 +35,10 @@
                 maxZoom: 16,
                 minZoom: 1,
                 label: 'Watercolor'
+            }),
+            L.tileLayer.wms('https://maps.ngdc.noaa.gov/soap/web_mercator/gebco08_hillshade/MapServer/WMSServer', {
+                layers: 'GEBCO_08 hillshade with Natural Earth 2',
+                label: 'GEBCO Hillshade'
             })
         ];
 

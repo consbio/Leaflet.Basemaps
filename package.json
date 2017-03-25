@@ -1,6 +1,6 @@
 {
 	"name": "leaflet-basemaps",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Basemaps Control for Leaflet",
   	"homepage": "http://github.com/consbio/Leaflet.Basemaps",
   	"author": {

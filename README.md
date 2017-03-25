@@ -44,11 +44,13 @@ Include the JavaScript:
 
 The control expects a list of TileLayer instances, constructed in the [normal way](http://leafletjs.com/reference.html#tilelayer).
 
-An optional `layer` property can be added in the options for each basemap, and this will be used to populate the tooltip
+An optional `label` property can be added in the options for each basemap, and this will be used to populate the tooltip
 (HTML `title` attribute) for that basemap.
 
 Each basemap is represented using a tile from the underlying tile service.  Choose the tile x, y, z that provides the
 best looking representative basemap image for your application.
+
+`TileLayer.WMS` layers can also be used, and tile coordinates will be converted to bounding boxes to request the preview thumbnail.
 
 The preview shows an alternative basemap to the currently selected basemap to be more apparent as a toggle between basemaps.
 
@@ -80,6 +82,10 @@ var basemaps = [
         maxZoom: 16,
         minZoom: 1,
         label: 'Watercolor'
+    }),
+    L.tileLayer.wms('https://maps.ngdc.noaa.gov/soap/web_mercator/gebco08_hillshade/MapServer/WMSServer', {
+        layers: 'GEBCO_08 hillshade with Natural Earth 2',
+        label: 'GEBCO Hillshade'
     })
 ];
 

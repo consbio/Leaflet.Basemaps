@@ -7,7 +7,7 @@ underlying tile service.
 
 See the [example](//consbio.github.io/Leaflet.Basemaps).
 
-*Tested with Leaflet 1.0.0-rc3*
+*Tested with Leaflet 1.0.0*
 
 
 ## Install
@@ -49,6 +49,8 @@ An optional `layer` property can be added in the options for each basemap, and t
 
 Each basemap is represented using a tile from the underlying tile service.  Choose the tile x, y, z that provides the
 best looking representative basemap image for your application.
+
+The preview shows an alternative basemap to the currently selected basemap to be more apparent as a toggle between basemaps.
 
 Note: this automatically adds the first basemap in your list to the map during initialization, so you don't need to add that
 TileLayer to your map.

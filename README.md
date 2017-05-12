@@ -98,6 +98,14 @@ map.addControl(L.control.basemaps({
 ```
 
 
+
+### Toggle Mode
+To enable toggling between 2 basemaps, simply provide only 2 basemaps.
+
+See [toggle example](//consbio.github.io/Leaflet.Basemaps/examples/toggle.html).
+
+
+
 ## Credits:
 Developed and maintained with support from the [Peninsular Florida Landscape Conservation Cooperative](http://peninsularfloridalcc.org) and additional support from the [U.S. Forest Service Northwest Regional Climate Hub](http://www.fs.fed.us/climatechange/nrch/).
 

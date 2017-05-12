@@ -95,13 +95,15 @@ L.Control.Basemaps = L.Control.extend({
 
         }, this);
 
-        L.DomEvent.on(container, 'mouseenter', function() {
-            L.DomUtil.removeClass(container, 'closed');
-        }, this);
+        if (this.options.basemaps.length > 2) {
+            L.DomEvent.on(container, 'mouseenter', function () {
+                L.DomUtil.removeClass(container, 'closed');
+            }, this);
 
-        L.DomEvent.on(container, 'mouseleave', function() {
-            L.DomUtil.addClass(container, 'closed');
-        }, this);
+            L.DomEvent.on(container, 'mouseleave', function () {
+                L.DomUtil.addClass(container, 'closed');
+            }, this);
+        }
 
         this._container = container;
         return this._container;

@@ -3,7 +3,7 @@ var minify = require('gulp-minify');
 
 
 gulp.task('build', function () {
-    gulp.src('L.Control.Basemaps.js')
+    return gulp.src('L.Control.Basemaps.js')
         .pipe(minify({noSource: true}))
         .pipe(gulp.dest('./'))
 });

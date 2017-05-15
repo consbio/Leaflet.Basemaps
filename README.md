@@ -83,9 +83,9 @@ var basemaps = [
         minZoom: 1,
         label: 'Watercolor'
     }),
-    L.tileLayer.wms('https://maps.ngdc.noaa.gov/soap/web_mercator/gebco08_hillshade/MapServer/WMSServer', {
-        layers: 'GEBCO_08 hillshade with Natural Earth 2',
-        label: 'GEBCO Hillshade'
+    L.tileLayer.wms('https://firms.modaps.eosdis.nasa.gov/wms/viirs', {
+        layers: 'NASA FIRMS',
+        label: 'NASA Fire Hotspots'
     })
 ];
 

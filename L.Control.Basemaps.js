@@ -1,6 +1,6 @@
 L.Control.Basemaps = L.Control.extend({
     _map: null,
-    includes: L.Mixin.Events,
+    includes: L.Evented,
     options: {
         position: 'bottomright',
         tileX: 0,

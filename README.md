@@ -7,7 +7,7 @@ underlying tile service.
 
 See the [example](//consbio.github.io/Leaflet.Basemaps).
 
-*Tested with Leaflet 1.0.0*
+*Tested with Leaflet 1.1.0*
 
 
 ## Install
@@ -113,3 +113,4 @@ Developed and maintained with support from the [Peninsular Florida Landscape Con
 ## Contributors:
 * [Brendan Ward](https://github.com/brendan-ward)
 * [Nik Molnar](https://github.com/nikmolnar)
+* [Kaveh Karimi](https://github.com/ka7eh)

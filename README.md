@@ -12,15 +12,6 @@ See the [example](//consbio.github.io/Leaflet.Basemaps).
 
 ## Install
 
-From Bower:
-
-```
-bower install Leaflet.Basemaps
-```
-
-
-From NPM:
-
 ```
 npm install leaflet-basemaps
 ```

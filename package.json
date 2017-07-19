@@ -1,6 +1,6 @@
 {
 	"name": "leaflet-basemaps",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "Basemaps Control for Leaflet",
   	"homepage": "http://github.com/consbio/Leaflet.Basemaps",
   	"author": {
@@ -16,5 +16,6 @@
 		"url": "git://github.com/consbio/Leaflet.Basemaps"
 	},
 	"keywords": ["leaflet"],
-	"license": "ISC"
+	"license": "ISC",
+	"main": "L.Control.Basemaps-min.js"
 }

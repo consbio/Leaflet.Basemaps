@@ -31,42 +31,47 @@ L.Control.Basemaps = L.Control.extend({
                 basemapClass += ' alt'
             }
 
-            var coords = {x: this.options.tileX, y: this.options.tileY};
-            var url = L.Util.template(d._url, L.extend({
-                s: d._getSubdomain(coords),
-                x: coords.x,
-                y: d.options.tms ? d._globalTileRange.max.y - coords.y : coords.y,
-                z: this.options.tileZ
-            }, d.options));
+            if (d.options.iconURL) {
+                url = d.options.iconURL;
+                console.log('url is: ', url);
+            }
+            else {
+                var coords = {x: this.options.tileX, y: this.options.tileY};
+                var url = L.Util.template(d._url, L.extend({
+                    s: d._getSubdomain(coords),
+                    x: coords.x,
+                    y: d.options.tms ? d._globalTileRange.max.y - coords.y : coords.y,
+                    z: this.options.tileZ
+                }, d.options));
 
-            if (d instanceof L.TileLayer.WMS) {
-                // d may not yet be initialized, yet functions below expect ._map to be set
-                d._map = map;
+                if (d instanceof L.TileLayer.WMS) {
+                    // d may not yet be initialized, yet functions below expect ._map to be set
+                    d._map = map;
 
-                // unfortunately, calling d.getTileUrl() does not work due to scope issues
-                // have to replicate some of the logic from L.TileLayer.WMS
+                    // unfortunately, calling d.getTileUrl() does not work due to scope issues
+                    // have to replicate some of the logic from L.TileLayer.WMS
 
-                // adapted from L.TileLayer.WMS::onAdd
-                var crs = d.options.crs || map.options.crs;
-                var wmsParams = L.extend({}, d.wmsParams);
-                var wmsVersion = parseFloat(wmsParams.version);
-                var projectionKey = wmsVersion >= 1.3 ? 'crs' : 'srs';
-                wmsParams[projectionKey] = crs.code;
+                    // adapted from L.TileLayer.WMS::onAdd
+                    var crs = d.options.crs || map.options.crs;
+                    var wmsParams = L.extend({}, d.wmsParams);
+                    var wmsVersion = parseFloat(wmsParams.version);
+                    var projectionKey = wmsVersion >= 1.3 ? 'crs' : 'srs';
+                    wmsParams[projectionKey] = crs.code;
 
-                // adapted from L.TileLayer.WMS::getTileUrl
-                var coords2 = L.point(coords);
-                coords2.z = this.options.tileZ;
-                var tileBounds = d._tileCoordsToBounds(coords2);
-                var nw = crs.project(tileBounds.getNorthWest());
-                var se = crs.project(tileBounds.getSouthEast());
-                var bbox = (wmsVersion >= 1.3 && crs === L.CRS.EPSG4326 ?
+                    // adapted from L.TileLayer.WMS::getTileUrl
+                    var coords2 = L.point(coords);
+                    coords2.z = this.options.tileZ;
+                    var tileBounds = d._tileCoordsToBounds(coords2);
+                    var nw = crs.project(tileBounds.getNorthWest());
+                    var se = crs.project(tileBounds.getSouthEast());
+                    var bbox = (wmsVersion >= 1.3 && crs === L.CRS.EPSG4326 ?
                         [se.y, nw.x, nw.y, se.x] :
                         [nw.x, se.y, se.x, nw.y]).join(',');
 
-                url += L.Util.getParamString(wmsParams, url, d.options.uppercase) +
-                    (d.options.uppercase ? '&BBOX=' : '&bbox=') + bbox;
+                    url += L.Util.getParamString(wmsParams, url, d.options.uppercase) +
+                        (d.options.uppercase ? '&BBOX=' : '&bbox=') + bbox;
+                }
             }
-
 
             var basemapNode = L.DomUtil.create('div', basemapClass, container);
             var imgNode = L.DomUtil.create('img', null, basemapNode);

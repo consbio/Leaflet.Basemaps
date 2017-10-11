@@ -97,6 +97,36 @@ See [toggle example](//consbio.github.io/Leaflet.Basemaps/examples/toggle.html).
 
 
 
+### Alternative Basemap Icons
+To use a different thumbnail for your basemap, simply provide `iconURL`.
+
+See [example](//consbio.github.io/Leaflet.Basemaps/examples/alternative_icons.html).
+
+`iconURL` can point to a tile image within that basemap, but at a different
+zoom level, x, or y position than the default for the basemaps.  Or it can point
+to an arbitrary image.  Just make sure that the target image is not too big.
+
+Example:
+```
+L.tileLayer('//stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+    subdomains: 'abcd',
+    maxZoom: 20,
+    minZoom: 0,
+    label: 'Toner',
+    iconURL: '//stamen-tiles-a.a.ssl.fastly.net/toner/4/2/5.png'
+}),
+L.tileLayer('//stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+    subdomains: 'abcd',
+    maxZoom: 16,
+    minZoom: 1,
+    label: 'Watercolor',
+    iconURL: 'alt_icon.jpg'
+})
+```
+
+
 ## Credits:
 Developed and maintained with support from the [Peninsular Florida Landscape Conservation Cooperative](http://peninsularfloridalcc.org) and additional support from the [U.S. Forest Service Northwest Regional Climate Hub](http://www.fs.fed.us/climatechange/nrch/).
 

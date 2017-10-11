@@ -59,7 +59,7 @@ L.Control.Basemaps = L.Control.extend({
                 var tileBounds = d._tileCoordsToBounds(coords2);
                 var nw = crs.project(tileBounds.getNorthWest());
                 var se = crs.project(tileBounds.getSouthEast());
-                var bbox = (wmsVersion >= 1.3 && crs === EPSG4326 ?
+                var bbox = (wmsVersion >= 1.3 && crs === L.CRS.EPSG4326 ?
                         [se.y, nw.x, nw.y, se.x] :
                         [nw.x, se.y, se.x, nw.y]).join(',');
 

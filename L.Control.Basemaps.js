@@ -11,7 +11,6 @@ L.Control.Basemaps = L.Control.extend({
     basemap: null,
     onAdd: function (map) {
         this._map = map;
-        this.mapId = map._container.id;
         var container = L.DomUtil.create('div', 'basemaps leaflet-control closed');
 
         // disable events
@@ -84,21 +83,13 @@ L.Control.Basemaps = L.Control.extend({
                     d.bringToBack();
                     map.fire('baselayerchange', d);
                     this.basemap = d;
-                    if(this.mapId){
-                        L.DomUtil.removeClass(document.getElementById(this.mapId).getElementsByClassName('basemap active')[0], 'active');
-                    }else {
-                        L.DomUtil.removeClass(document.getElementsByClassName('basemap active')[0], 'active');
-                    }
+                    
+                    L.DomUtil.removeClass(container.getElementsByClassName('basemap active')[0], 'active');
                     L.DomUtil.addClass(basemapNode, 'active');
 
                     var altIdx = (i+1) % this.options.basemaps.length;
-                    if(this.mapId){
-                        L.DomUtil.removeClass(document.getElementById(this.mapId).getElementsByClassName('basemap alt')[0], 'alt');
-                        L.DomUtil.addClass(document.getElementById(this.mapId).getElementsByClassName('basemap')[altIdx], 'alt');
-                    }else {
-                        L.DomUtil.removeClass(document.getElementsByClassName('basemap alt')[0], 'alt');
-                        L.DomUtil.addClass(document.getElementsByClassName('basemap')[altIdx], 'alt');
-                    }
+                    L.DomUtil.removeClass(container.getElementsByClassName('basemap alt')[0], 'alt');
+                    L.DomUtil.addClass(container.getElementsByClassName('basemap')[altIdx], 'alt');
                 }
             }, this);
 

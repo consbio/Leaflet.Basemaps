@@ -1,6 +1,6 @@
 {
 	"name": "leaflet-basemaps",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"description": "Basemaps Control for Leaflet",
 	"homepage": "http://github.com/consbio/Leaflet.Basemaps",
 	"author": {
@@ -9,7 +9,7 @@
 	},
 	"devDependencies": {
 		"gulp": "^3.9.1",
-		"gulp-minify": "^0.0.7"
+		"gulp-minify": "^3.1.0"
 	},
 	"repository": {
 		"type": "git",

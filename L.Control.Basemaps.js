@@ -104,6 +104,15 @@ L.Control.Basemaps = L.Control.extend({
                         var altIdx = (i + 1) % this.options.basemaps.length;
                         L.DomUtil.removeClass(container.getElementsByClassName("basemap alt")[0], "alt");
                         L.DomUtil.addClass(container.getElementsByClassName("basemap")[altIdx], "alt");
+
+			if(L.Browser.touch) {
+			    // fix close on ipad tablets ...
+			    if(L.DomUtil.hasClass(container, "closed")){
+				L.DomUtil.removeClass(container, "closed");
+			    }else{
+				L.DomUtil.addClass(container, "closed");
+			    }
+			}
                     }
                 },
                 this

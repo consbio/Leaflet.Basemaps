@@ -7,15 +7,13 @@ underlying tile service.
 
 See the [example](//consbio.github.io/Leaflet.Basemaps).
 
-*Tested with Leaflet 1.1.0*
-
+_Tested with Leaflet 1.1.0_
 
 ## Install
 
 ```
 npm install leaflet-basemaps
 ```
-
 
 ## Usage
 
@@ -25,20 +23,18 @@ Include the CSS:
 <link rel="stylesheet" href="L.Control.Basemaps.css" />
 ```
 
-
 Include the JavaScript:
 
 ```
 <script src="L.Control.Basemaps-min.js"></script>
 ```
 
-
 The control expects a list of TileLayer instances, constructed in the [normal way](http://leafletjs.com/reference.html#tilelayer).
 
 An optional `label` property can be added in the options for each basemap, and this will be used to populate the tooltip
 (HTML `title` attribute) for that basemap.
 
-Each basemap is represented using a tile from the underlying tile service.  Choose the tile x, y, z that provides the
+Each basemap is represented using a tile from the underlying tile service. Choose the tile x, y, z that provides the
 best looking representative basemap image for your application.
 
 `TileLayer.WMS` layers can also be used, and tile coordinates will be converted to bounding boxes to request the preview thumbnail.
@@ -47,7 +43,6 @@ The preview shows an alternative basemap to the currently selected basemap to be
 
 Note: this automatically adds the first basemap in your list to the map during initialization, so you don't need to add that
 TileLayer to your map.
-
 
 Example usage:
 
@@ -88,25 +83,24 @@ map.addControl(L.control.basemaps({
 }));
 ```
 
-
-
 ### Toggle Mode
+
 To enable toggling between 2 basemaps, simply provide only 2 basemaps.
 
 See [toggle example](//consbio.github.io/Leaflet.Basemaps/examples/toggle.html).
 
-
-
 ### Alternative Basemap Icons
+
 To use a different thumbnail for your basemap, simply provide `iconURL`.
 
 See [example](//consbio.github.io/Leaflet.Basemaps/examples/alternative_icons.html).
 
 `iconURL` can point to a tile image within that basemap, but at a different
-zoom level, x, or y position than the default for the basemaps.  Or it can point
-to an arbitrary image.  Just make sure that the target image is not too big.
+zoom level, x, or y position than the default for the basemaps. Or it can point
+to an arbitrary image. Just make sure that the target image is not too big.
 
 Example:
+
 ```
 L.tileLayer('//stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
@@ -126,12 +120,18 @@ L.tileLayer('//stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
 })
 ```
 
+## Development
+
+-   `npm install`
+-   `node_modules/.bin/gulp` (starts file watcher)
+-   `node_modules/.bin/gulp build` ( builds minified version)
 
 ## Credits:
+
 Developed and maintained with support from the [Peninsular Florida Landscape Conservation Cooperative](http://peninsularfloridalcc.org) and additional support from the [U.S. Forest Service Northwest Regional Climate Hub](http://www.fs.fed.us/climatechange/nrch/).
 
-
 ## Contributors:
-* [Brendan Ward](https://github.com/brendan-ward)
-* [Nik Molnar](https://github.com/nikmolnar)
-* [Kaveh Karimi](https://github.com/ka7eh)
+
+-   [Brendan Ward](https://github.com/brendan-ward)
+-   [Nik Molnar](https://github.com/nikmolnar)
+-   [Kaveh Karimi](https://github.com/ka7eh)

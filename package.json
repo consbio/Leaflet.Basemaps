@@ -1,23 +1,23 @@
 {
-	"name": "leaflet-basemaps",
-	"version": "0.3.2",
-	"description": "Basemaps Control for Leaflet",
-	"homepage": "http://github.com/consbio/Leaflet.Basemaps",
-	"author": {
-		"name": "Brendan Ward",
-		"email": "bcward@consbio.org"
-	},
-	"devDependencies": {
-		"gulp": "^3.9.1",
-		"gulp-minify": "^3.1.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/consbio/Leaflet.Basemaps"
-	},
-	"keywords": [
-		"leaflet"
-	],
-	"license": "ISC",
-	"main": "L.Control.Basemaps-min.js"
+    "name": "leaflet-basemaps",
+    "version": "0.3.3",
+    "description": "Basemaps Control for Leaflet",
+    "homepage": "http://github.com/consbio/Leaflet.Basemaps",
+    "author": {
+        "name": "Brendan Ward",
+        "email": "bcward@consbio.org"
+    },
+    "devDependencies": {
+        "gulp": "^4.0.0",
+        "gulp-minify": "^3.1.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/consbio/Leaflet.Basemaps"
+    },
+    "keywords": [
+        "leaflet"
+    ],
+    "license": "ISC",
+    "main": "L.Control.Basemaps-min.js"
 }

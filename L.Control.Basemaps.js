@@ -90,6 +90,14 @@ L.Control.Basemaps = L.Control.extend({
                 basemapNode,
                 "click",
                 function() {
+                    // intercept open click on mobile devices and show options
+                    if (this.options.basemaps.length > 2 && L.Browser.mobile) {
+                        if (L.DomUtil.hasClass(container, "closed")) {
+                            L.DomUtil.removeClass(container, "closed");
+                            return;
+                        }
+                    }
+
                     //if different, remove previous basemap, and add new one
                     if (d != this.basemap) {
                         map.removeLayer(this.basemap);
@@ -105,21 +113,14 @@ L.Control.Basemaps = L.Control.extend({
                         L.DomUtil.removeClass(container.getElementsByClassName("basemap alt")[0], "alt");
                         L.DomUtil.addClass(container.getElementsByClassName("basemap")[altIdx], "alt");
 
-			if(L.Browser.touch) {
-			    // fix close on ipad tablets ...
-			    if(L.DomUtil.hasClass(container, "closed")){
-				L.DomUtil.removeClass(container, "closed");
-			    }else{
-				L.DomUtil.addClass(container, "closed");
-			    }
-			}
+                        L.DomUtil.addClass(container, "closed");
                     }
                 },
                 this
             );
         }, this);
 
-        if (this.options.basemaps.length > 2) {
+        if (this.options.basemaps.length > 2 && !L.Browser.mobile) {
             L.DomEvent.on(
                 container,
                 "mouseenter",
